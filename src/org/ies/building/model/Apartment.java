@@ -38,6 +38,18 @@ public class Apartment {
         this.owners = owners;
     }
 
+    public void showOwners() {
+        for (var owner: owners) {
+            owner.ownerInfo();
+        }
+    }
+
+    public void apartmentInfo() {
+        System.out.println("Piso:" + getFloor() + ". Puerta" + getDoor());
+        System.out.print("Propietarios: ");
+        showOwners();
+    }
+
     @Override
     public String toString() {
         return "Apartment{" +

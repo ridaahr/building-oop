@@ -38,6 +38,36 @@ public class Building {
         this.apartments = apartments;
     }
 
+    public void apartmentInfo() {
+        for (var apartament: apartments) {
+            apartmentInfo();
+        }
+    }
+
+    public void buildingInfo() {
+        System.out.println("Dirección: " + getAddress() + ". Municipio" + getMunicipality());
+        System.out.println("Apartamentos: ");
+        apartmentInfo();
+    }
+
+    public void apartmentFloorDoor(int floor, int door) {
+        var apartment =
+        for (var apartment: apartments) {
+            if (apartment.getFloor() == floor || apartment.getDoor() == door) {
+            }
+        }
+    }
+
+    public void apartmentDoor(int floor) {
+        for (var apartment: apartments) {
+            if (apartment.getFloor() == floor) {
+                apartmentInfo();
+            } else {
+                System.out.println("No hay apartamentos");
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Building{" +

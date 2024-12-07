@@ -37,6 +37,10 @@ public class Owner {
         this.surname = surname;
     }
 
+    public void ownerInfo() {
+        System.out.println("NIF:" + getNif() + ". Nombre" + getName() + ". Apellidos:" + getSurname());
+    }
+
     @Override
     public String toString() {
         return "owner{" +
