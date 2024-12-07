@@ -38,7 +38,7 @@ public class Owner {
     }
 
     public void ownerInfo() {
-        System.out.println("NIF:" + getNif() + ". Nombre" + getName() + ". Apellidos:" + getSurname());
+        System.out.println("NIF: " + getNif() + ". Nombre: " + getName() + ". Apellidos: " + getSurname());
     }
 
     @Override

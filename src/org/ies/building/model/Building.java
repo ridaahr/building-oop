@@ -38,33 +38,78 @@ public class Building {
         this.apartments = apartments;
     }
 
-    public void apartmentInfo() {
+    public void apartmentData() {
         for (var apartament: apartments) {
-            apartmentInfo();
+            apartament.apartmentData();
         }
     }
 
     public void buildingInfo() {
-        System.out.println("Dirección: " + getAddress() + ". Municipio" + getMunicipality());
+        System.out.println("Dirección: " + getAddress() + ". Municipio: " + getMunicipality());
         System.out.println("Apartamentos: ");
-        apartmentInfo();
+        apartmentData();
     }
 
-    public void apartmentFloorDoor(int floor, int door) {
-        var apartment =
+    public Apartment apartmentInfo(int floor, int door) {
         for (var apartment: apartments) {
             if (apartment.getFloor() == floor || apartment.getDoor() == door) {
+                return apartment;
             }
+        }
+        return null;
+    }
+
+    public Apartment apartmentInfoFloor(int floor) {
+        for (var apartment: apartments) {
+            if (apartment.getFloor() == floor) {
+                return apartment;
+            }
+        }
+        return null;
+    }
+
+    public Apartment apartmentFloorDoor(int floor, int door) {
+        var apartment = apartmentInfo(floor, door);
+        if (apartment != null) {
+            return apartment;
+        }
+        return null;
+    }
+
+    public void apartmentFloor(int floor) {
+        var apartment = apartmentInfoFloor(floor);
+        if (apartment != null) {
+            apartmentData();
+        } else {
+            System.out.println("No hay apartamentos");
         }
     }
 
-    public void apartmentDoor(int floor) {
-        for (var apartment: apartments) {
-            if (apartment.getFloor() == floor) {
-                apartmentInfo();
-            } else {
-                System.out.println("No hay apartamentos");
-            }
+    public Owner apartmentOwners(int floor, int door) {
+        var apartment = apartmentFloorDoor(floor, door);
+        if (apartment != null) {
+            apartment.getOwners();
+        }
+        return null;
+    }
+
+    public void showApartments(int floor, int door) {
+        var apartment = apartmentFloorDoor(floor, door);
+
+        if (apartment != null) {
+            apartment.apartmentData();
+        } else {
+            System.out.println("No existe el apartamento");
+        }
+    }
+
+    public void showApartmentOwners(int floor, int door) {
+        var apartment = apartmentFloorDoor(floor, door);
+
+        if (apartment != null) {
+            apartment.showOwners();
+        } else {
+            System.out.println("No existe el apartamento");
         }
     }
 

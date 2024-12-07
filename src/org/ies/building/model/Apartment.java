@@ -44,9 +44,10 @@ public class Apartment {
         }
     }
 
-    public void apartmentInfo() {
-        System.out.println("Piso:" + getFloor() + ". Puerta" + getDoor());
-        System.out.print("Propietarios: ");
+
+    public void apartmentData() {
+        System.out.println("Piso:" + getFloor() + ". Puerta: " + getDoor());
+        System.out.println("Propietarios: ");
         showOwners();
     }
 

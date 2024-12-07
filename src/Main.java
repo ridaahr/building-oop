@@ -1,5 +1,19 @@
+import org.ies.building.components.ApartmentReader;
+import org.ies.building.components.BuildingApp;
+import org.ies.building.components.BuildingReader;
+import org.ies.building.components.OwnerReader;
+
+import java.io.BufferedReader;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        var scanner = new Scanner(System.in);
+        var ownerReader = new OwnerReader(scanner);
+        var apartmentReader = new ApartmentReader(scanner, ownerReader);
+        var buildingReader = new BuildingReader(scanner, apartmentReader);
+        var buildingApp = new BuildingApp(scanner, buildingReader);
+
+        buildingApp.run();
     }
 }
