@@ -38,6 +38,7 @@ public class Apartment {
         this.owners = owners;
     }
 
+    //Saca la información de todos los propietarios
     public void showOwners() {
         for (var owner: owners) {
             owner.ownerInfo();

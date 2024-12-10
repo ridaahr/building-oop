@@ -37,6 +37,7 @@ public class Owner {
         this.surname = surname;
     }
 
+    //Saca la información de los propietarios
     public void ownerInfo() {
         System.out.println("NIF: " + getNif() + ". Nombre: " + getName() + ". Apellidos: " + getSurname());
     }

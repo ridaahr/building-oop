@@ -44,13 +44,15 @@ public class Building {
         }
     }
 
+    //Saca toda la información del edificio
     public void buildingInfo() {
         System.out.println("Dirección: " + getAddress() + ". Municipio: " + getMunicipality());
         System.out.println("Apartamentos: ");
         apartmentData();
     }
 
-    public Apartment apartmentInfo(int floor, int door) {
+    //Busca y devuelve un apartamento dado una planta y una puerta
+    public Apartment findApartment(int floor, int door) {
         for (var apartment: apartments) {
             if (apartment.getFloor() == floor || apartment.getDoor() == door) {
                 return apartment;
@@ -59,6 +61,7 @@ public class Building {
         return null;
     }
 
+    //Busca apartamento por plantas
     public Apartment apartmentInfoFloor(int floor) {
         for (var apartment: apartments) {
             if (apartment.getFloor() == floor) {
@@ -68,23 +71,26 @@ public class Building {
         return null;
     }
 
+
+    //Busca apartamento por planta y puerta
     public Apartment apartmentFloorDoor(int floor, int door) {
-        var apartment = apartmentInfo(floor, door);
+        var apartment = findApartment(floor, door);
         if (apartment != null) {
             return apartment;
         }
         return null;
     }
 
+    //Muestra información apartamento por planta
     public void apartmentFloor(int floor) {
-        var apartment = apartmentInfoFloor(floor);
-        if (apartment != null) {
-            apartmentData();
-        } else {
-            System.out.println("No hay apartamentos");
+        for (var apartment: apartments) {
+            if (apartment.getFloor() == floor) {
+                apartment.apartmentData();
+            }
         }
     }
 
+    //Devuelve los propietarios de un apartamento
     public Owner apartmentOwners(int floor, int door) {
         var apartment = apartmentFloorDoor(floor, door);
         if (apartment != null) {
@@ -93,6 +99,7 @@ public class Building {
         return null;
     }
 
+    //Muestra la información de los apartamentos por planta y puerta
     public void showApartments(int floor, int door) {
         var apartment = apartmentFloorDoor(floor, door);
 
@@ -103,6 +110,7 @@ public class Building {
         }
     }
 
+    //Muestra los propietarios por planta y puerta
     public void showApartmentOwners(int floor, int door) {
         var apartment = apartmentFloorDoor(floor, door);
 
