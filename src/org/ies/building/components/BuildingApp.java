@@ -25,8 +25,7 @@ public class BuildingApp {
                 int floor = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Introduce la puerta");
-                int door = scanner.nextInt();
-                scanner.nextLine();
+                var door = scanner.nextLine();
                 var building1 = building.findApartment(floor, door);
                 System.out.println(building1);
             } else if (option == 3) {
@@ -39,8 +38,7 @@ public class BuildingApp {
                 int floor = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Introduce la puerta");
-                int door = scanner.nextInt();
-                scanner.nextLine();
+                var door = scanner.nextLine();
                 var owners = building.apartmentOwners(floor, door);
                 System.out.println(owners);
             } else if (option == 5) {
@@ -48,16 +46,15 @@ public class BuildingApp {
                 int floor = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Introduce la puerta");
-                int door = scanner.nextInt();
-                scanner.nextLine();
+                var door = scanner.nextLine();
+
                 building.showApartments(floor, door);
             } else if (option == 6) {
                 System.out.println("Introduce el piso");
                 int floor = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Introduce la puerta");
-                int door = scanner.nextInt();
-                scanner.nextLine();
+                var door = scanner.nextLine();
                 building.showApartmentOwners(floor, door);
             }
         } while (option != 7);

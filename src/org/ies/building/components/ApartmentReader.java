@@ -20,8 +20,7 @@ public class ApartmentReader {
         scanner.nextLine();
 
         System.out.println("Introduce la puerta");
-        var door = scanner.nextInt();
-        scanner.nextLine();
+        String door = scanner.nextLine();
 
         System.out.println("¿Cuántos propietarios tiene?");
         var size = scanner.nextInt();

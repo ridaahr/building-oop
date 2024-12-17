@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class Apartment {
     private int floor;
-    private int door;
+    private String door;
     private Owner[] owners;
 
-    public Apartment(int floor, int door, Owner[] owners) {
+    public Apartment(int floor, String door, Owner[] owners) {
         this.floor = floor;
         this.door = door;
         this.owners = owners;
@@ -22,11 +22,11 @@ public class Apartment {
         this.floor = floor;
     }
 
-    public int getDoor() {
+    public String getDoor() {
         return door;
     }
 
-    public void setDoor(int door) {
+    public void setDoor(String door) {
         this.door = door;
     }
 

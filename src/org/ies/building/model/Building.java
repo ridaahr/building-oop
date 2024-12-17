@@ -52,9 +52,9 @@ public class Building {
     }
 
     //Busca y devuelve un apartamento dado una planta y una puerta
-    public Apartment findApartment(int floor, int door) {
+    public Apartment findApartment(int floor, String door) {
         for (var apartment: apartments) {
-            if (apartment.getFloor() == floor || apartment.getDoor() == door) {
+            if (apartment.getFloor() == floor || apartment.getDoor().equals(door)) {
                 return apartment;
             }
         }
@@ -73,7 +73,7 @@ public class Building {
 
 
     //Busca apartamento por planta y puerta
-    public Apartment apartmentFloorDoor(int floor, int door) {
+    public Apartment apartmentFloorDoor(int floor, String door) {
         var apartment = findApartment(floor, door);
         if (apartment != null) {
             return apartment;
@@ -91,8 +91,8 @@ public class Building {
     }
 
     //Devuelve los propietarios de un apartamento
-    public Owner apartmentOwners(int floor, int door) {
-        var apartment = apartmentFloorDoor(floor, door);
+    public Owner[] apartmentOwners(int floor, String door) {
+        var apartment = findApartment(floor, door);
         if (apartment != null) {
             apartment.getOwners();
         }
@@ -100,8 +100,8 @@ public class Building {
     }
 
     //Muestra la información de los apartamentos por planta y puerta
-    public void showApartments(int floor, int door) {
-        var apartment = apartmentFloorDoor(floor, door);
+    public void showApartments(int floor, String door) {
+        var apartment = findApartment(floor, door);
 
         if (apartment != null) {
             apartment.apartmentData();
@@ -111,7 +111,7 @@ public class Building {
     }
 
     //Muestra los propietarios por planta y puerta
-    public void showApartmentOwners(int floor, int door) {
+    public void showApartmentOwners(int floor, String door) {
         var apartment = apartmentFloorDoor(floor, door);
 
         if (apartment != null) {
