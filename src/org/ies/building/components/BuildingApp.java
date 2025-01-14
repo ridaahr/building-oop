@@ -1,5 +1,7 @@
 package org.ies.building.components;
 
+import org.ies.building.model.Building;
+
 import java.util.Scanner;
 
 public class BuildingApp {
@@ -21,26 +23,38 @@ public class BuildingApp {
             if (option == 1) {
                 building.buildingInfo();
             } else if (option == 2) {
-                System.out.println("Introduce el piso");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                building.apartmentFloor(floor);
+                runOption2(building);
             } else if (option == 3) {
-                System.out.println("Introduce el piso");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce la puerta");
-                var door = scanner.nextLine();
-                building.showApartments(floor, door);
+                runOption3(building);
             } else if (option == 4) {
-                System.out.println("Introduce el piso");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce la puerta");
-                var door = scanner.nextLine();
-                building.showApartmentOwners(floor, door);
+                runOption4(building);
             }
         } while (option != 5);
+    }
+
+    private void runOption4(Building building) {
+        System.out.println("Introduce el piso");
+        int floor = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Introduce la puerta");
+        var door = scanner.nextLine();
+        building.showApartmentOwners(floor, door);
+    }
+
+    private void runOption3(Building building) {
+        System.out.println("Introduce el piso");
+        int floor = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Introduce la puerta");
+        var door = scanner.nextLine();
+        building.showApartments(floor, door);
+    }
+
+    private void runOption2(Building building) {
+        System.out.println("Introduce el piso");
+        int floor = scanner.nextInt();
+        scanner.nextLine();
+        building.apartmentFloor(floor);
     }
 
     private int chooseOption() {
