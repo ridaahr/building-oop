@@ -24,32 +24,15 @@ public class BuildingApp {
                 System.out.println("Introduce el piso");
                 int floor = scanner.nextInt();
                 scanner.nextLine();
-                System.out.println("Introduce la puerta");
-                var door = scanner.nextLine();
-                var building1 = building.findApartment(floor, door);
-                System.out.println(building1);
+                building.apartmentFloor(floor);
             } else if (option == 3) {
                 System.out.println("Introduce el piso");
                 int floor = scanner.nextInt();
                 scanner.nextLine();
-                building.apartmentFloor(floor);
-            } else if (option == 4) {
-                System.out.println("Introduce el piso");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
                 System.out.println("Introduce la puerta");
                 var door = scanner.nextLine();
-                var owners = building.apartmentOwners(floor, door);
-                System.out.println(owners);
-            } else if (option == 5) {
-                System.out.println("Introduce el piso");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce la puerta");
-                var door = scanner.nextLine();
-
                 building.showApartments(floor, door);
-            } else if (option == 6) {
+            } else if (option == 4) {
                 System.out.println("Introduce el piso");
                 int floor = scanner.nextInt();
                 scanner.nextLine();
@@ -57,22 +40,20 @@ public class BuildingApp {
                 var door = scanner.nextLine();
                 building.showApartmentOwners(floor, door);
             }
-        } while (option != 7);
+        } while (option != 5);
     }
 
     private int chooseOption() {
         int option;
         do {
             System.out.println("1. Muestra toda la información del edificio");
-            System.out.println("2. Devuelve el apartamento en planta y puerta que indiques");
-            System.out.println("3. Mostrar apartamentos de una planta");
-            System.out.println("4. Devolver propietarios de una planta y puerta");
-            System.out.println("5. Mostrar datos del apartamento de una planta y puerta");
-            System.out.println("6. Mostrar propietarios de un apartamento situado en una planta y puerta dados");
-            System.out.println("7. Salir");
+            System.out.println("2. Mostrar apartamentos de una planta");
+            System.out.println("3. Mostrar datos del apartamento de una planta y puerta");
+            System.out.println("4. Mostrar propietarios de un apartamento situado en una planta y puerta dados");
+            System.out.println("5. Salir");
             option = scanner.nextInt();
             scanner.nextLine();
-        } while (option < 1 || option > 7);
+        } while (option < 1 || option > 5);
         return option;
     }
 }
